@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Star Demir otomatik kepenk hizmet bölgeleri: İzmir, Manisa, Aydın, Muğla, Balıkesir, Denizli. 7/24 servis.">
+  <title>Hizmet Bölgeleri – Star Demir Otomatik Kepenk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .bolgeler-section { padding: 80px 40px; }
+    .bolgeler-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 48px;
+    }
+    .bolge-card {
+      background: var(--dark2);
+      padding: 48px 36px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.25s;
+    }
+    .bolge-card:hover { background: var(--dark3); }
+    .bolge-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .bolge-card:hover::after { transform: scaleX(1); }
+    .bolge-icon { font-size: 40px; margin-bottom: 16px; display: block; }
+    .bolge-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 32px; letter-spacing: 0.05em; color: var(--white); margin-bottom: 12px; }
+    .bolge-card p { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; }
+    .bolge-tag {
+      display: inline-block;
+      background: rgba(201,150,10,0.1);
+      border: 1px solid rgba(201,150,10,0.25);
+      color: var(--gold-light);
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.08em; padding: 4px 10px; border-radius: 2px;
+      margin: 2px;
+    }
+
+    .coverage-band {
+      background: var(--dark2);
+      padding: 60px 40px;
+      text-align: center;
+      border-top: 1px solid rgba(201,150,10,0.1);
+      border-bottom: 1px solid rgba(201,150,10,0.1);
+    }
+    .coverage-band p { font-size: 16px; color: var(--muted); max-width: 600px; margin: 16px auto 0; }
+
+    .cta-band { background: var(--gold); padding: 60px 40px; text-align: center; }
+    .cta-band h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px,4vw,48px); color: #0C1118; letter-spacing: 0.04em; margin-bottom: 10px; }
+    .cta-band p { font-size: 15px; color: rgba(12,17,24,0.7); margin-bottom: 28px; }
+    .cta-band a { display: inline-flex; align-items: center; gap: 10px; background: #0C1118; color: var(--gold); font-weight: 700; font-size: 17px; padding: 15px 32px; border-radius: 4px; text-decoration: none; }
+
+    @media (max-width: 768px) {
+      .bolgeler-grid { grid-template-columns: 1fr 1fr; }
+      .bolgeler-section { padding: 60px 20px; }
+    }
+    @media (max-width: 480px) {
+      .bolgeler-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html"><img src="logo.png" alt="Star Demir"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Ana Sayfa</a></li>
+    <li><a href="hizmetler.html">Hizmetler</a></li>
+    <li><a href="galeri.html">Referanslar</a></li>
+    <li><a href="bolgeler.html" class="active">Bölgeler</a></li>
+    <li><a href="iletisim.html">İletişim</a></li>
+  </ul>
+  <a href="tel:+905411719493" class="nav-phone">📞 0541 171 94 93</a>
+</nav>
+
+<div class="page-hero">
+  <div class="section-label">Nerede Hizmet Veriyoruz</div>
+  <div class="section-title">Hizmet Bölgelerimiz</div>
+  <p class="section-sub">Ege Bölgesi'nin 6 ilinde otomatik kepenk montaj, tamir ve 7/24 acil servis hizmeti sunuyoruz.</p>
+</div>
+
+<section class="bolgeler-section">
+  <div class="inner">
+    <div class="bolgeler-grid">
+
+      <div class="bolge-card">
+        <span class="bolge-icon">📍</span>
+        <h3>İzmir</h3>
+        <p>Merkez hizmet bölgemiz. Tüm ilçelere hızlı ulaşım ve acil servis imkânı.</p>
+        <span class="bolge-tag">Konak</span>
+        <span class="bolge-tag">Bornova</span>
+        <span class="bolge-tag">Karşıyaka</span>
+        <span class="bolge-tag">Buca</span>
+        <span class="bolge-tag">Gaziemir</span>
+        <span class="bolge-tag">Çiğli</span>
+        <span class="bolge-tag">Menemen</span>
+        <span class="bolge-tag">Torbalı</span>
+      </div>
+
+      <div class="bolge-card">
+        <span class="bolge-icon">📍</span>
+        <h3>Manisa</h3>
+        <p>Manisa merkez ve ilçelerinde otomatik kepenk montaj ve tamir hizmetleri.</p>
+        <span class="bolge-tag">Manisa Merkez</span>
+        <span class="bolge-tag">Akhisar</span>
+        <span class="bolge-tag">Soma</span>
+        <span class="bolge-tag">Turgutlu</span>
+        <span class="bolge-tag">Salihli</span>
+      </div>
+
+      <div class="bolge-card">
+        <span class="bolge-icon">📍</span>
+        <h3>Aydın</h3>
+        <p>Aydın ve çevre ilçelerde profesyonel kepenk sistemleri hizmetleri.</p>
+        <span class="bolge-tag">Aydın Merkez</span>
+        <span class="bolge-tag">Kuşadası</span>
+        <span class="bolge-tag">Didim</span>
+        <span class="bolge-tag">Nazilli</span>
+        <span class="bolge-tag">Söke</span>
+      </div>
+
+      <div class="bolge-card">
+        <span class="bolge-icon">📍</span>
+        <h3>Muğla</h3>
+        <p>Muğla ve tatil bölgelerinde ticari ve konut tipi kepenk çözümleri.</p>
+        <span class="bolge-tag">Muğla Merkez</span>
+        <span class="bolge-tag">Bodrum</span>
+        <span class="bolge-tag">Marmaris</span>
+        <span class="bolge-tag">Fethiye</span>
+        <span class="bolge-tag">Milas</span>
+      </div>
+
+      <div class="bolge-card">
+        <span class="bolge-icon">📍</span>
+        <h3>Balıkesir</h3>
+        <p>Balıkesir il merkezi ve ilçelerinde otomatik kepenk montaj hizmeti.</p>
+        <span class="bolge-tag">Balıkesir Merkez</span>
+        <span class="bolge-tag">Bandırma</span>
+        <span class="bolge-tag">Edremit</span>
+        <span class="bolge-tag">Ayvalık</span>
+      </div>
+
+      <div class="bolge-card">
+        <span class="bolge-icon">📍</span>
+        <h3>Denizli</h3>
+        <p>Denizli ve çevre ilçelerde hızlı ve güvenilir kepenk sistemi hizmetleri.</p>
+        <span class="bolge-tag">Denizli Merkez</span>
+        <span class="bolge-tag">Pamukkale</span>
+        <span class="bolge-tag">Çorlu</span>
+        <span class="bolge-tag">Sarayköy</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="coverage-band">
+  <div class="section-label">Önemli Not</div>
+  <div class="section-title">Bölge Dışı Hizmet</div>
+  <p>Yukarıdaki illerin dışında kalan bölgeler için de hizmet verebiliyoruz. Arayın, mesafeye göre en uygun çözümü birlikte belirleyelim.</p>
+</div>
+
+<div class="cta-band">
+  <h2>Bölgenizde Hizmet Almak İçin Arayın</h2>
+  <p>7/24 acil servis — Ücretsiz keşif — Kredi kartına taksit</p>
+  <a href="tel:+905411719493">📞 0541 171 94 93</a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Star Demir">
+      <p>İzmir ve çevre illerde otomatik kepenk, garaj kapısı ve otomatik kapı sistemleri montaj, tamir ve 7/24 acil servis.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Sayfalar</h4>
+      <ul>
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="hizmetler.html">Hizmetlerimiz</a></li>
+        <li><a href="galeri.html">Referanslarımız</a></li>
+        <li><a href="bolgeler.html">Hizmet Bölgeleri</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>İletişim</h4>
+      <p>Ümit Şengöz</p>
+      <p><a href="tel:+905411719493">0541 171 94 93</a></p>
+      <p>7/24 Acil Servis</p>
+    </div>
+  </div>
+  <div class="footer-copy">© 2025 Star Demir Otomatik Kepenk Sistemleri. Tüm hakları saklıdır.</div>
+</footer>
+
+</body>
+</html>

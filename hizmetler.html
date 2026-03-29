@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Star Demir otomatik kepenk, garaj kapısı ve otomatik kapı sistemleri hizmetleri. İzmir'de 7/24 montaj, tamir ve bakım.">
+  <title>Hizmetlerimiz – Star Demir Otomatik Kepenk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .hizmet-block { padding: 80px 40px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .hizmet-block:nth-child(even) { background: var(--dark2); }
+    .hizmet-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .hizmet-inner.reverse { direction: rtl; }
+    .hizmet-inner.reverse > * { direction: ltr; }
+    .hizmet-img { border-radius: 4px; overflow: hidden; }
+    .hizmet-img img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+    .hizmet-text .section-label { margin-bottom: 8px; }
+    .hizmet-text h2 { font-family: 'Bebas Neue', sans-serif; font-size: 44px; color: var(--white); letter-spacing: 0.04em; line-height: 1; margin-bottom: 20px; }
+    .hizmet-text p { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 16px; }
+    .hizmet-list { list-style: none; margin: 20px 0 28px; }
+    .hizmet-list li { font-size: 14px; color: var(--text); padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; gap: 10px; }
+    .hizmet-list li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+    .cta-band { background: var(--gold); padding: 60px 40px; text-align: center; }
+    .cta-band h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px,4vw,48px); color: #0C1118; letter-spacing: 0.04em; margin-bottom: 10px; }
+    .cta-band p { font-size: 15px; color: rgba(12,17,24,0.7); margin-bottom: 28px; }
+    .cta-band a { display: inline-flex; align-items: center; gap: 10px; background: #0C1118; color: var(--gold); font-weight: 700; font-size: 17px; padding: 15px 32px; border-radius: 4px; text-decoration: none; }
+    @media (max-width: 768px) {
+      .hizmet-inner { grid-template-columns: 1fr; direction: ltr; }
+      .hizmet-inner.reverse { direction: ltr; }
+      .hizmet-block { padding: 60px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html"><img src="logo.png" alt="Star Demir"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Ana Sayfa</a></li>
+    <li><a href="hizmetler.html" class="active">Hizmetler</a></li>
+    <li><a href="galeri.html">Referanslar</a></li>
+    <li><a href="bolgeler.html">Bölgeler</a></li>
+    <li><a href="iletisim.html">İletişim</a></li>
+  </ul>
+  <a href="tel:+905411719493" class="nav-phone">📞 0541 171 94 93</a>
+</nav>
+
+<div class="page-hero">
+  <div class="section-label">Star Demir</div>
+  <div class="section-title">Hizmetlerimiz</div>
+  <p class="section-sub">Otomatik kepenk, garaj kapısı ve kapı sistemlerinde montaj, tamir ve 7/24 acil servis hizmeti sunuyoruz.</p>
+</div>
+
+<div class="hizmet-block">
+  <div class="hizmet-inner">
+    <div class="hizmet-img"><img src="p1.jpg" alt="Otomatik kepenk sistemleri İzmir"></div>
+    <div class="hizmet-text">
+      <div class="section-label">Hizmet 01</div>
+      <h2>Otomatik Kepenk Sistemleri</h2>
+      <p>İşyerinizin güvenliğini ve estetiğini bir arada sunan otomatik kepenk sistemleri. Çelik, alüminyum ve galvaniz seçenekleriyle her ihtiyaca özel çözüm üretiyoruz.</p>
+      <ul class="hizmet-list">
+        <li>Motorlu otomatik kepenk montajı</li>
+        <li>Manuel kepenk sistemleri</li>
+        <li>Kepenk motor değişimi ve bakımı</li>
+        <li>Arıza tamir ve yedek parça temini</li>
+        <li>İstediğiniz renk ve ölçüde imalat</li>
+        <li>7/24 acil arıza servisi</li>
+      </ul>
+      <a href="tel:+905411719493" class="btn-primary">📞 Fiyat Teklifi Al</a>
+    </div>
+  </div>
+</div>
+
+<div class="hizmet-block">
+  <div class="hizmet-inner reverse">
+    <div class="hizmet-img"><img src="p7.jpg" alt="Garaj kapısı sistemleri İzmir"></div>
+    <div class="hizmet-text">
+      <div class="section-label">Hizmet 02</div>
+      <h2>Garaj Kapısı Sistemleri</h2>
+      <p>Konut ve ticari yapılar için modern garaj kapısı çözümleri. Uzaktan kumandalı, pratik ve güvenli sistemler kuruyoruz.</p>
+      <ul class="hizmet-list">
+        <li>Seksiyonel garaj kapısı montajı</li>
+        <li>Raylı garaj kapısı sistemleri</li>
+        <li>Katlanır tip garaj kapıları</li>
+        <li>Uzaktan kumanda entegrasyonu</li>
+        <li>Garaj kapısı motor değişimi</li>
+        <li>7/24 acil arıza servisi</li>
+      </ul>
+      <a href="tel:+905411719493" class="btn-primary">📞 Fiyat Teklifi Al</a>
+    </div>
+  </div>
+</div>
+
+<div class="hizmet-block">
+  <div class="hizmet-inner">
+    <div class="hizmet-img"><img src="p2.jpg" alt="Otomatik kapı sistemleri İzmir"></div>
+    <div class="hizmet-text">
+      <div class="section-label">Hizmet 03</div>
+      <h2>Otomatik Kapı Sistemleri</h2>
+      <p>İş merkezleri, mağazalar ve endüstriyel tesisler için sensörlü ve otomatik kapı sistemleri. Güvenli, hızlı ve dayanıklı çözümler.</p>
+      <ul class="hizmet-list">
+        <li>Sürgülü otomatik kapı montajı</li>
+        <li>Döner kapı sistemleri</li>
+        <li>Teleskopik kapı sistemleri</li>
+        <li>Fotoselli güvenlik sistemi</li>
+        <li>Çelik konstrüksiyon imalat</li>
+        <li>7/24 acil arıza servisi</li>
+      </ul>
+      <a href="tel:+905411719493" class="btn-primary">📞 Fiyat Teklifi Al</a>
+    </div>
+  </div>
+</div>
+
+<div class="cta-band">
+  <h2>Ücretsiz Keşif İçin Arayın</h2>
+  <p>Tüm hizmetlerimiz için ücretsiz keşif ve fiyat teklifi. Kredi kartına taksit imkânı.</p>
+  <a href="tel:+905411719493">📞 0541 171 94 93</a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Star Demir">
+      <p>İzmir ve çevre illerde otomatik kepenk, garaj kapısı ve otomatik kapı sistemleri montaj, tamir ve 7/24 acil servis.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Sayfalar</h4>
+      <ul>
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="hizmetler.html">Hizmetlerimiz</a></li>
+        <li><a href="galeri.html">Referanslarımız</a></li>
+        <li><a href="bolgeler.html">Hizmet Bölgeleri</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>İletişim</h4>
+      <p>Ümit Şengöz</p>
+      <p><a href="tel:+905411719493">0541 171 94 93</a></p>
+      <p>7/24 Acil Servis</p>
+    </div>
+  </div>
+  <div class="footer-copy">© 2025 Star Demir Otomatik Kepenk Sistemleri. Tüm hakları saklıdır.</div>
+</footer>
+
+</body>
+</html>

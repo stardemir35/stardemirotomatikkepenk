@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Star Demir Otomatik Kepenk tamamlanan işler ve referanslar. İzmir'de montaj yapılan otomatik kepenk projeleri.">
+  <title>Referanslarımız – Star Demir Otomatik Kepenk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .galeri-section { padding: 80px 40px; }
+    .masonry {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 48px;
+    }
+    .masonry-item { overflow: hidden; position: relative; background: var(--dark3); }
+    .masonry-item.tall { grid-row: span 2; }
+    .masonry-item.wide { grid-column: span 2; }
+    .masonry-item img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.5s ease, filter 0.3s;
+      filter: brightness(0.92) saturate(0.9);
+      min-height: 280px;
+    }
+    .masonry-item:hover img { transform: scale(1.04); filter: brightness(1) saturate(1.1); }
+    .masonry-item .overlay {
+      position: absolute; inset: 0;
+      background: rgba(12,17,24,0.5);
+      opacity: 0; transition: opacity 0.3s;
+      display: flex; align-items: flex-end; padding: 20px;
+    }
+    .masonry-item:hover .overlay { opacity: 1; }
+    .overlay-text { font-size: 13px; color: var(--gold-light); font-weight: 500; }
+    .cta-band { background: var(--gold); padding: 60px 40px; text-align: center; }
+    .cta-band h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px,4vw,48px); color: #0C1118; letter-spacing: 0.04em; margin-bottom: 10px; }
+    .cta-band p { font-size: 15px; color: rgba(12,17,24,0.7); margin-bottom: 28px; }
+    .cta-band a { display: inline-flex; align-items: center; gap: 10px; background: #0C1118; color: var(--gold); font-weight: 700; font-size: 17px; padding: 15px 32px; border-radius: 4px; text-decoration: none; }
+    @media (max-width: 768px) {
+      .masonry { grid-template-columns: 1fr 1fr; }
+      .masonry-item.wide { grid-column: span 2; }
+      .masonry-item.tall { grid-row: span 1; }
+      .galeri-section { padding: 60px 20px; }
+    }
+    @media (max-width: 480px) {
+      .masonry { grid-template-columns: 1fr; }
+      .masonry-item.wide { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html"><img src="logo.png" alt="Star Demir"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Ana Sayfa</a></li>
+    <li><a href="hizmetler.html">Hizmetler</a></li>
+    <li><a href="galeri.html" class="active">Referanslar</a></li>
+    <li><a href="bolgeler.html">Bölgeler</a></li>
+    <li><a href="iletisim.html">İletişim</a></li>
+  </ul>
+  <a href="tel:+905411719493" class="nav-phone">📞 0541 171 94 93</a>
+</nav>
+
+<div class="page-hero">
+  <div class="section-label">Tamamlanan İşler</div>
+  <div class="section-title">Referanslarımız</div>
+  <p class="section-sub">İzmir ve çevre illerde tamamladığımız otomatik kepenk, garaj kapısı ve kapı sistemi projelerimizden örnekler.</p>
+</div>
+
+<section class="galeri-section">
+  <div class="inner">
+    <div class="masonry">
+      <div class="masonry-item wide">
+        <img src="p1.jpg" alt="Çift kanatlı otomatik kepenk montajı">
+        <div class="overlay"><span class="overlay-text">Otomatik Kepenk Montajı</span></div>
+      </div>
+      <div class="masonry-item tall">
+        <img src="p2.jpg" alt="Endüstriyel kepenk sistemi">
+        <div class="overlay"><span class="overlay-text">Endüstriyel Kepenk</span></div>
+      </div>
+      <div class="masonry-item">
+        <img src="p3.jpg" alt="Galvaniz kepenk montajı">
+        <div class="overlay"><span class="overlay-text">Galvaniz Kepenk</span></div>
+      </div>
+      <div class="masonry-item">
+        <img src="p4.jpg" alt="Gri kepenk sistemi">
+        <div class="overlay"><span class="overlay-text">Çelik Kepenk</span></div>
+      </div>
+      <div class="masonry-item wide">
+        <img src="p5.jpg" alt="Kepenk tamir servisi">
+        <div class="overlay"><span class="overlay-text">Kepenk Tamir & Servis</span></div>
+      </div>
+      <div class="masonry-item">
+        <img src="p6.jpg" alt="Renkli kepenk montajı">
+        <div class="overlay"><span class="overlay-text">Özel Renk Kepenk</span></div>
+      </div>
+      <div class="masonry-item">
+        <img src="p7.jpg" alt="Garaj kapısı montajı">
+        <div class="overlay"><span class="overlay-text">Garaj Kapısı</span></div>
+      </div>
+      <div class="masonry-item tall">
+        <img src="p8.jpg" alt="Büyük kepenk sistemi">
+        <div class="overlay"><span class="overlay-text">Geniş Açıklık Kepenk</span></div>
+      </div>
+      <div class="masonry-item wide">
+        <img src="p9.jpg" alt="Üç kanatlı kepenk sistemi">
+        <div class="overlay"><span class="overlay-text">Çoklu Kepenk Sistemi</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2>Projeniz İçin Teklif Alın</h2>
+  <p>Ücretsiz keşif ve fiyat teklifi için hemen arayın.</p>
+  <a href="tel:+905411719493">📞 0541 171 94 93</a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Star Demir">
+      <p>İzmir ve çevre illerde otomatik kepenk, garaj kapısı ve otomatik kapı sistemleri montaj, tamir ve 7/24 acil servis.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Sayfalar</h4>
+      <ul>
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="hizmetler.html">Hizmetlerimiz</a></li>
+        <li><a href="galeri.html">Referanslarımız</a></li>
+        <li><a href="bolgeler.html">Hizmet Bölgeleri</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>İletişim</h4>
+      <p>Ümit Şengöz</p>
+      <p><a href="tel:+905411719493">0541 171 94 93</a></p>
+      <p>7/24 Acil Servis</p>
+    </div>
+  </div>
+  <div class="footer-copy">© 2025 Star Demir Otomatik Kepenk Sistemleri. Tüm hakları saklıdır.</div>
+</footer>
+
+</body>
+</html>
