@@ -11,7 +11,7 @@
   <style>
     .contact-section { padding: 80px 40px; }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; margin-top: 48px; }
-
+ 
     /* Sol: İletişim Bilgileri */
     .contact-info h3 { font-family: 'Bebas Neue', sans-serif; font-size: 34px; color: var(--white); letter-spacing: 0.04em; margin-bottom: 32px; }
     .contact-item { display: flex; gap: 18px; align-items: flex-start; margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.05); }
@@ -26,7 +26,7 @@
     .contact-item p { font-size: 15px; color: var(--text); line-height: 1.6; }
     .contact-item a { color: var(--gold-light); text-decoration: none; font-size: 20px; font-weight: 600; }
     .contact-item a:hover { text-decoration: underline; }
-
+ 
     /* Sağ: Harita */
     .contact-map h3 { font-family: 'Bebas Neue', sans-serif; font-size: 34px; color: var(--white); letter-spacing: 0.04em; margin-bottom: 20px; }
     .map-embed { border-radius: 8px; overflow: hidden; border: 1px solid rgba(201,150,10,0.2); margin-bottom: 20px; }
@@ -37,7 +37,7 @@
       text-decoration: none; transition: opacity 0.2s;
     }
     .map-link:hover { opacity: 0.7; }
-
+ 
     /* Taksit bandı */
     .taksit-band { background: var(--dark2); padding: 60px 40px; }
     .taksit-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; margin-top: 48px; }
@@ -45,22 +45,79 @@
     .taksit-icon { font-size: 36px; margin-bottom: 14px; }
     .taksit-card h4 { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--white); letter-spacing: 0.04em; margin-bottom: 8px; }
     .taksit-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
-
+ 
     .cta-band { background: var(--gold); padding: 60px 40px; text-align: center; }
     .cta-band h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px,4vw,48px); color: #0C1118; letter-spacing: 0.04em; margin-bottom: 10px; }
     .cta-band p { font-size: 15px; color: rgba(12,17,24,0.7); margin-bottom: 28px; }
     .cta-band a { display: inline-flex; align-items: center; gap: 10px; background: #0C1118; color: var(--gold); font-weight: 700; font-size: 17px; padding: 15px 32px; border-radius: 4px; text-decoration: none; }
-
+ 
+    /* Form */
+    .form-section { margin-top: 64px; padding-top: 64px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .form-section h3 { font-family: 'Bebas Neue', sans-serif; font-size: 34px; color: var(--white); letter-spacing: 0.04em; margin-bottom: 8px; }
+    .form-section p { font-size: 14px; color: var(--muted); margin-bottom: 32px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 8px; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group label { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,150,10,0.2);
+      border-radius: 6px;
+      padding: 14px 16px;
+      font-size: 15px;
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--muted); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--gold); }
+    .form-group select option { background: #1a2030; color: var(--white); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-submit {
+      margin-top: 20px;
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .form-submit button {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--gold); color: #0C1118;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700; font-size: 16px;
+      padding: 16px 32px; border-radius: 4px;
+      border: none; cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .form-submit button:hover { opacity: 0.88; }
+    .form-note { font-size: 13px; color: var(--muted); }
+    .form-success {
+      display: none;
+      background: rgba(201,150,10,0.08);
+      border: 1px solid rgba(201,150,10,0.3);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-top: 20px;
+      color: var(--gold-light);
+      font-size: 15px;
+    }
+ 
     @media (max-width: 768px) {
       .contact-grid { grid-template-columns: 1fr; }
       .taksit-inner { grid-template-columns: 1fr; }
       .contact-section { padding: 60px 20px; }
       .taksit-band { padding: 60px 20px; }
+      .form-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-
+ 
 <nav>
   <a href="index.html"><img src="logo.png" alt="Star Demir"></a>
   <ul class="nav-links">
@@ -72,20 +129,20 @@
   </ul>
   <a href="tel:+905411719493" class="nav-phone">📞 0541 171 94 93</a>
 </nav>
-
+ 
 <div class="page-hero">
   <div class="section-label">Bize Ulaşın</div>
   <div class="section-title">İletişim & Ücretsiz Keşif</div>
   <p class="section-sub">Hemen arayın, ekibimiz en kısa sürede size ulaşsın. Ücretsiz keşif ve fiyat teklifi hazırlayalım.</p>
 </div>
-
+ 
 <section class="contact-section">
   <div class="inner">
     <div class="contact-grid">
-
+ 
       <div class="contact-info">
         <h3>İletişim Bilgileri</h3>
-
+ 
         <div class="contact-item">
           <div class="contact-item-icon">📞</div>
           <div>
@@ -94,7 +151,7 @@
             <p style="margin-top:4px; font-size:13px; color:var(--muted);">7/24 arayabilirsiniz</p>
           </div>
         </div>
-
+ 
         <div class="contact-item">
           <div class="contact-item-icon">👤</div>
           <div>
@@ -102,7 +159,7 @@
             <p>Ümit Şengöz</p>
           </div>
         </div>
-
+ 
         <div class="contact-item">
           <div class="contact-item-icon">🕐</div>
           <div>
@@ -110,7 +167,7 @@
             <p>7/24 Acil Arıza Servisi<br>Montaj & Keşif: Hafta içi 08:00–18:00</p>
           </div>
         </div>
-
+ 
         <div class="contact-item">
           <div class="contact-item-icon">📍</div>
           <div>
@@ -118,7 +175,7 @@
             <p>İzmir · Manisa · Aydın<br>Muğla · Balıkesir · Denizli</p>
           </div>
         </div>
-
+ 
         <div class="contact-item">
           <div class="contact-item-icon">💳</div>
           <div>
@@ -126,12 +183,12 @@
             <p>Nakit · Kredi Kartı · Taksit imkânı</p>
           </div>
         </div>
-
+ 
         <a href="tel:+905411719493" class="btn-primary" style="margin-top:8px; width:100%; justify-content:center; font-size:18px; padding:18px;">
           📞 Hemen Ara — 0541 171 94 93
         </a>
       </div>
-
+ 
       <div class="contact-map">
         <h3>Konumumuz</h3>
         <div class="map-embed">
@@ -144,11 +201,84 @@
           📍 Google Haritalar'da Aç →
         </a>
       </div>
-
-    </div>
-  </div>
+ 
+    </div><!-- /.contact-grid -->
+ 
+      <!-- Keşif Talep Formu -->
+      <div class="form-section">
+        <h3>Ücretsiz Keşif Talebi</h3>
+        <p>Formu doldurun, sizi en kısa sürede arayalım.</p>
+ 
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="ad">Ad Soyad</label>
+            <input type="text" id="ad" placeholder="Adınız Soyadınız">
+          </div>
+          <div class="form-group">
+            <label for="tel">Telefon</label>
+            <input type="tel" id="tel" placeholder="05XX XXX XX XX">
+          </div>
+          <div class="form-group">
+            <label for="hizmet">Hizmet Türü</label>
+            <select id="hizmet">
+              <option value="" disabled selected>Seçiniz</option>
+              <option>Otomatik Kepenk Montajı</option>
+              <option>Kepenk Tamiri / Arıza</option>
+              <option>Garaj Kapısı Montajı</option>
+              <option>Garaj Kapısı Tamiri</option>
+              <option>Otomatik Kapı Sistemi</option>
+              <option>Bakım & Servis</option>
+              <option>Diğer</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="ilce">İlçe / Şehir</label>
+            <input type="text" id="ilce" placeholder="Örn: Bornova, İzmir">
+          </div>
+          <div class="form-group full">
+            <label for="mesaj">Mesajınız (İsteğe Bağlı)</label>
+            <textarea id="mesaj" placeholder="Kepenk ölçüsü, mevcut durum veya eklemek istediğiniz bilgiler..."></textarea>
+          </div>
+        </div>
+ 
+        <div class="form-submit">
+          <button type="button" onclick="formGonder()">📋 Keşif Talebi Gönder</button>
+          <span class="form-note">Verileriniz yalnızca sizinle iletişim için kullanılır.</span>
+        </div>
+        <div class="form-success" id="formSuccess">
+          ✅ Talebiniz alındı! Ümit Bey en kısa sürede sizi arayacak.
+        </div>
+      </div><!-- /.form-section -->
+ 
+  </div><!-- /.inner -->
 </section>
-
+ 
+<script>
+function formGonder() {
+  const ad = document.getElementById('ad').value.trim();
+  const tel = document.getElementById('tel').value.trim();
+  const hizmet = document.getElementById('hizmet').value;
+  const ilce = document.getElementById('ilce').value.trim();
+  const mesaj = document.getElementById('mesaj').value.trim();
+ 
+  if (!ad || !tel) {
+    alert('Lütfen ad soyad ve telefon numaranızı girin.');
+    return;
+  }
+ 
+  const text = `Yeni Keşif Talebi!\n\nAd Soyad: ${ad}\nTelefon: ${tel}\nHizmet: ${hizmet || 'Belirtilmedi'}\nİlçe: ${ilce || 'Belirtilmedi'}\nMesaj: ${mesaj || '-'}`;
+  const encoded = encodeURIComponent(text);
+  window.open(`https://wa.me/905411719493?text=${encoded}`, '_blank');
+ 
+  document.getElementById('formSuccess').style.display = 'block';
+  document.getElementById('ad').value = '';
+  document.getElementById('tel').value = '';
+  document.getElementById('hizmet').selectedIndex = 0;
+  document.getElementById('ilce').value = '';
+  document.getElementById('mesaj').value = '';
+}
+</script>
+ 
 <div class="taksit-band">
   <div class="inner">
     <div class="section-label">Avantajlarımız</div>
@@ -172,13 +302,13 @@
     </div>
   </div>
 </div>
-
+ 
 <div class="cta-band">
   <h2>Şimdi Arayın, Ücretsiz Teklif Alın</h2>
   <p>İzmir ve çevre illerde en hızlı servis garantisi.</p>
   <a href="tel:+905411719493">📞 0541 171 94 93</a>
 </div>
-
+ 
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
@@ -204,6 +334,6 @@
   </div>
   <div class="footer-copy">© 2025 Star Demir Otomatik Kepenk Sistemleri. Tüm hakları saklıdır.</div>
 </footer>
-
+ 
 </body>
 </html>
