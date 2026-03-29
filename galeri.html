@@ -48,6 +48,52 @@
       .masonry { grid-template-columns: 1fr; }
       .masonry-item.wide { grid-column: span 1; }
     }
+
+    /* LİGHTBOX */
+    .masonry-item { cursor: pointer; }
+    .lightbox {
+      display: none;
+      position: fixed; inset: 0; z-index: 999;
+      background: rgba(0,0,0,0.93);
+      align-items: center; justify-content: center;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 90vw; max-height: 85vh;
+      object-fit: contain; border-radius: 4px;
+      box-shadow: 0 0 60px rgba(0,0,0,0.8);
+      transition: opacity 0.25s ease;
+    }
+    .lightbox img.fade { opacity: 0; }
+    .lb-close {
+      position: fixed; top: 20px; right: 28px;
+      font-size: 36px; color: #fff; cursor: pointer;
+      line-height: 1; opacity: 0.7; transition: opacity 0.2s;
+      background: none; border: none;
+    }
+    .lb-close:hover { opacity: 1; }
+    .lb-prev, .lb-next {
+      position: fixed; top: 50%; transform: translateY(-50%);
+      font-size: 28px; color: #fff; cursor: pointer;
+      background: rgba(201,150,10,0.2);
+      border: 1px solid rgba(201,150,10,0.4);
+      width: 52px; height: 52px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s; user-select: none;
+    }
+    .lb-prev { left: 20px; }
+    .lb-next { right: 20px; }
+    .lb-prev:hover, .lb-next:hover { background: rgba(201,150,10,0.5); }
+    .lb-caption {
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+      font-size: 13px; color: var(--gold-light);
+      background: rgba(12,17,24,0.7); padding: 6px 18px; border-radius: 20px;
+      white-space: nowrap;
+    }
+    .lb-counter {
+      position: fixed; top: 24px; left: 50%; transform: translateX(-50%);
+      font-size: 13px; color: rgba(255,255,255,0.5);
+    }
   </style>
 </head>
 <body>
@@ -73,43 +119,104 @@
 <section class="galeri-section">
   <div class="inner">
     <div class="masonry">
-      <div class="masonry-item wide">
+      <div class="masonry-item wide" onclick="openLightbox(0)">
         <img src="p1.jpg" alt="Çift kanatlı otomatik kepenk montajı">
         <div class="overlay"><span class="overlay-text">Otomatik Kepenk Montajı</span></div>
       </div>
-      <div class="masonry-item tall">
+      <div class="masonry-item tall" onclick="openLightbox(1)">
         <img src="p2.jpg" alt="Endüstriyel kepenk sistemi">
         <div class="overlay"><span class="overlay-text">Endüstriyel Kepenk</span></div>
       </div>
-      <div class="masonry-item">
+      <div class="masonry-item" onclick="openLightbox(2)">
         <img src="p3.jpg" alt="Galvaniz kepenk montajı">
         <div class="overlay"><span class="overlay-text">Galvaniz Kepenk</span></div>
       </div>
-      <div class="masonry-item">
+      <div class="masonry-item" onclick="openLightbox(3)">
         <img src="p4.jpg" alt="Gri kepenk sistemi">
         <div class="overlay"><span class="overlay-text">Çelik Kepenk</span></div>
       </div>
-      <div class="masonry-item wide">
+      <div class="masonry-item wide" onclick="openLightbox(4)">
         <img src="p5.jpg" alt="Kepenk tamir servisi">
         <div class="overlay"><span class="overlay-text">Kepenk Tamir & Servis</span></div>
       </div>
-      <div class="masonry-item">
+      <div class="masonry-item" onclick="openLightbox(5)">
         <img src="p6.jpg" alt="Renkli kepenk montajı">
         <div class="overlay"><span class="overlay-text">Özel Renk Kepenk</span></div>
       </div>
-      <div class="masonry-item">
+      <div class="masonry-item" onclick="openLightbox(6)">
         <img src="p7.jpg" alt="Garaj kapısı montajı">
         <div class="overlay"><span class="overlay-text">Garaj Kapısı</span></div>
       </div>
-      <div class="masonry-item tall">
+      <div class="masonry-item tall" onclick="openLightbox(7)">
         <img src="p8.jpg" alt="Büyük kepenk sistemi">
         <div class="overlay"><span class="overlay-text">Geniş Açıklık Kepenk</span></div>
       </div>
-      <div class="masonry-item wide">
+      <div class="masonry-item wide" onclick="openLightbox(8)">
         <img src="p9.jpg" alt="Üç kanatlı kepenk sistemi">
         <div class="overlay"><span class="overlay-text">Çoklu Kepenk Sistemi</span></div>
       </div>
     </div>
+
+    <!-- LİGHTBOX -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+      <button class="lb-close" onclick="closeLightbox()">✕</button>
+      <button class="lb-prev" onclick="event.stopPropagation(); changeImage(-1)">‹</button>
+      <img id="lb-img" src="" alt="">
+      <button class="lb-next" onclick="event.stopPropagation(); changeImage(1)">›</button>
+      <div class="lb-caption" id="lb-caption"></div>
+      <div class="lb-counter" id="lb-counter"></div>
+    </div>
+
+    <script>
+      const images = [
+        { src: 'p1.jpg', caption: 'Otomatik Kepenk Montajı' },
+        { src: 'p2.jpg', caption: 'Endüstriyel Kepenk' },
+        { src: 'p3.jpg', caption: 'Galvaniz Kepenk' },
+        { src: 'p4.jpg', caption: 'Çelik Kepenk' },
+        { src: 'p5.jpg', caption: 'Kepenk Tamir & Servis' },
+        { src: 'p6.jpg', caption: 'Özel Renk Kepenk' },
+        { src: 'p7.jpg', caption: 'Garaj Kapısı' },
+        { src: 'p8.jpg', caption: 'Geniş Açıklık Kepenk' },
+        { src: 'p9.jpg', caption: 'Çoklu Kepenk Sistemi' },
+      ];
+      let current = 0;
+
+      function openLightbox(index) {
+        current = index;
+        document.getElementById('lightbox').classList.add('active');
+        document.body.style.overflow = 'hidden';
+        updateLightbox();
+      }
+
+      function closeLightbox(e) {
+        if (e && e.target !== document.getElementById('lightbox') && e.target !== document.querySelector('.lb-close')) return;
+        document.getElementById('lightbox').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      function changeImage(dir) {
+        const img = document.getElementById('lb-img');
+        img.classList.add('fade');
+        setTimeout(() => {
+          current = (current + dir + images.length) % images.length;
+          updateLightbox();
+          img.classList.remove('fade');
+        }, 220);
+      }
+
+      function updateLightbox() {
+        document.getElementById('lb-img').src = images[current].src;
+        document.getElementById('lb-caption').textContent = images[current].caption;
+        document.getElementById('lb-counter').textContent = (current + 1) + ' / ' + images.length;
+      }
+
+      document.addEventListener('keydown', e => {
+        if (!document.getElementById('lightbox').classList.contains('active')) return;
+        if (e.key === 'ArrowRight') changeImage(1);
+        if (e.key === 'ArrowLeft') changeImage(-1);
+        if (e.key === 'Escape') { document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow = ''; }
+      });
+    </script>
   </div>
 </section>
 
